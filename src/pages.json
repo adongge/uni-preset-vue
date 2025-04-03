@@ -5,6 +5,12 @@
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
+		},
+		{
+			"path": "pages/user/profile",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
 		}
 	],
 	"globalStyle": {
