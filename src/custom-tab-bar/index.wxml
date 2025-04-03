@@ -1,0 +1,24 @@
+<!--custom-tab-bar/index.wxml-->
+<view class="tab-bar {{show ? 'show' : ''}}">
+	<view class="tab-bar-border {{border}}"></view>
+	<view class="tab-list">
+		<view wx:for="{{list}}" wx:key="index" class="item {{index === selected ? 'active' : ''}}" data-index="{{index}}">
+			<button 
+				open-type="{{((item.auth === 'userInfo' && !userInfo) && 'getUserInfo') || ((item.auth === 'phoneNumber' && !userPhone) && 'getPhoneNumber') || ''}}" 
+				class="button" 
+				hover-class="none" 
+				data-index="{{index}}" 
+				bindtap="switchTab" 
+				bindgetuserinfo="onGetUserInfo" 
+				bindgetphonenumber="onGetPhoneNumber">
+				<view class="item-inner">
+					<view class="icon">
+						<image src="{{index === selected ? item.selectedIconPath : item.iconPath}}" class="img"></image>
+					</view>
+					<!-- <view class="text" style="color: {{ index === selected ? selectedColor : color }}">{{item.text}}</view> -->
+					<view class="bubble {{item.bubble > 99 ? 'more' : ''}}" hidden="{{!item.bubble}}">{{item.bubble > 99 ? '…' : item.bubble}}</view>
+				</view>
+			</button>
+		</view>
+	</view>
+</view>
