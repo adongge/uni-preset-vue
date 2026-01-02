@@ -20,7 +20,8 @@
 	import {
 		USER_DATA_KEY,
 		USER_DATA_KEY_ID,
-		VERSION
+		VERSION,
+		PLATFORM_ID
 	} from '@/config'
 	export default {
 		data() {
@@ -36,7 +37,7 @@
 			}
 		},
 		onShow() {
-			utils.setTabbar(0)
+			utils.setTabbar(0, false)
 		},
 		methods: {
 			userLogin() {
@@ -44,7 +45,8 @@
 					success: res => {
 						if (res.code) {
 							login({
-								code: res.code
+								code: res.code,
+								platform_id: PLATFORM_ID
 							}).then((result) => {
 								console.log(result)
 								utils.cache(USER_DATA_KEY, result.data.token, 'd1')

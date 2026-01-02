@@ -3,7 +3,10 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationStyle": "custom",
+				"backgroundColor": "#60A5FA",
+				"backgroundColorTop": "#60A5FA",
+				"backgroundColorBottom": "#C084FC"
 			}
 		},
 		{

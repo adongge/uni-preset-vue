@@ -28,3 +28,4 @@ export const STATIC = 'https://static.app.com'
 // #ifdef MP
 export const MP_WX_APPID = accountInfo.miniProgram.appId
 // #endif
+export const PLATFORM_ID = 999

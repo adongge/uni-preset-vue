@@ -9,12 +9,13 @@ export const utils = {
 			//TODO handle the exception
 		}
 	},
-	setTabbar(selected){
+	setTabbar(selected, show = true){
 		let pages = getCurrentPages();
 		let page = pages[pages.length - 1];
 		if (typeof page.getTabBar === 'function' && page.getTabBar()) {
 			page.getTabBar().setData({
-				selected: selected
+				selected: selected,
+				show: show
 			})
 		}
 	},
